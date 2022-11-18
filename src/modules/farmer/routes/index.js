@@ -8,9 +8,9 @@ const Stack = createNativeStackNavigator();
 
 export function FarmerStack() {
     return (
-      <Stack.Navigator screenOptions={{headerShown: true}}>
-        <Stack.Screen name="RegisterFarmer" component={RegisterFarmer} />
+      <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="ListFarmer" component={ListFarmer} />
+        <Stack.Screen name="RegisterFarmer" component={RegisterFarmer} />
       </Stack.Navigator>
     );
 }
