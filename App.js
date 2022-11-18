@@ -6,12 +6,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 
-export function App() {
+export default function App() {
     return (
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="AuthStack" component={ () => <AuthStack/>} />
-          {/* <Stack.Screen name="FarmerStack" component={ () => FarmerStack} /> */}
+        <Stack.Navigator screenOptions={{headerShown: true}}>
+          <Stack.Screen name="AuthStack" component={ AuthStack } />
+          <Stack.Screen name="FarmerStack" component={ FarmerStack } />
         </Stack.Navigator>
       </NavigationContainer>
     );
