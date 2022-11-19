@@ -5,6 +5,7 @@ import {
   ImageBackground,
   Dimensions,
   View,
+  Pressable,
 } from "react-native";
 import { Button, Text, TextInput } from "react-native-paper";
 import Constants from "expo-constants";
@@ -35,16 +36,18 @@ export default function Login({ navigation }) {
               style={styles.inputGroup}
               textColor="#063C2D"
               activeUnderlineColor="#063C2D"
-              label="Email"
+              label="Correo"
               value={email}
+              keyboardType={"email-address"}
               onChangeText={(email) => setEmail(email)}
             />
             <TextInput
               style={styles.inputGroup}
               textColor="#063C2D"
               activeUnderlineColor="#063C2D"
-              label="Password"
+              label="Contraseña"
               value={password}
+              secureTextEntry={true}
               onChangeText={(password) => setPassword(password)}
             />
           </View>
@@ -69,14 +72,16 @@ export default function Login({ navigation }) {
             >
               ¿No tienes cuenta?
             </Text>
-            <Text
-              style={{
-                color: "#063C2D",
-              }}
-              variant="bodyLarge"
-            >
-              Registrate
-            </Text>
+            <Pressable onPress={() => navigation.navigate("Register")}>
+              <Text
+                style={{
+                  color: "#063C2D",
+                }}
+                variant="bodyLarge"
+              >
+                Registrate
+              </Text>
+            </Pressable>
           </View>
         </View>
       </ImageBackground>
