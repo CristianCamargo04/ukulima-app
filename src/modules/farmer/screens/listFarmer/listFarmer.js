@@ -93,6 +93,7 @@ export default function ListFarmer({ navigation }) {
           textColor="#17431F"
           mode="contained"
           style={{ paddingHorizontal: 15 }}
+          onPress={() => navigation.navigate("RegisterFarmer")}
         >
           Agregar
         </Button>
